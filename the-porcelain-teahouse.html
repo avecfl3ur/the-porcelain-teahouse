@@ -313,6 +313,78 @@ html.in-lock,html.in-lock body{overflow:hidden}
   .side-deco.r .vband .vt{animation-direction:reverse}
   @keyframes vslide{to{transform:translateY(-50%)}}
 }
+
+/* ---- libraries (คลัง) ---- */
+.lib-card{grid-column:span 6;display:block;text-decoration:none;color:inherit}
+@media(max-width:640px){.lib-card{grid-column:span 12}}
+.lib-card .em{width:52px;height:52px;border-radius:50%;background:var(--matcha);display:grid;place-items:center;font-size:1.5rem;margin-bottom:12px}
+.lib-card h3{font-size:1.2rem;margin:0 0 4px}
+.lib-card p{margin:0;color:var(--muted);font-weight:300;font-size:.92rem}
+.lib-card .go{display:inline-block;margin-top:12px;font-size:.85rem;font-weight:500;color:var(--berry)}
+#libView{display:none}
+body.in-lib main,body.in-lib footer{display:none}
+body.in-lib #libView{display:block}
+.lib-back{display:inline-flex;align-items:center;gap:6px;margin:24px 0 0;padding:8px 18px;border-radius:999px;background:var(--pearl);color:var(--ink);text-decoration:none;font-weight:500;font-size:.9rem;box-shadow:0 10px 20px -14px var(--shadow)}
+.lib-tabs{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 20px}
+.lib-tabs a{padding:6px 16px;border-radius:999px;background:var(--pearl);color:var(--ink);text-decoration:none;font-size:.85rem;font-weight:500}
+.lib-tabs a.on{background:var(--night);color:var(--on-night)}
+.lib-intro{color:var(--muted);font-weight:300;margin:-8px 0 20px}
+.lib-item{grid-column:span 6;display:flex;flex-direction:column;gap:6px}
+@media(max-width:640px){.lib-item{grid-column:span 12}}
+.lib-item h3{font-size:1.1rem;margin:0}
+.lib-item .k{font-size:.75rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.lib-item p{margin:0;color:var(--muted);font-weight:300;font-size:.92rem}
+.lib-item pre{margin:6px 0 0;padding:12px 14px;border-radius:16px;background:var(--bg);font-size:.8rem;line-height:1.5;overflow-x:auto;white-space:pre-wrap}
+.lib-item button{align-self:flex-start;margin-top:6px;border:0;border-radius:999px;padding:6px 16px;background:var(--matcha);color:var(--matcha-ink);font:500 .8rem "Prompt",system-ui,sans-serif;cursor:pointer}
+.stars{color:var(--berry);letter-spacing:2px}
+
+/* ---- short stories library ---- */
+.lib-card.wide{grid-column:span 12;display:flex;align-items:center;gap:18px}
+.lib-card.wide .em{margin:0;flex:none}
+.lib-card.wide .go{margin:0 0 0 auto;flex:none}
+@media(max-width:560px){.lib-card.wide .go{display:none}}
+.lib-tabs{flex-wrap:nowrap;overflow-x:auto;padding-bottom:4px;scrollbar-width:none}
+.lib-tabs::-webkit-scrollbar{display:none}
+.lib-tabs a{white-space:nowrap;flex:none}
+.lib-item.story{grid-column:span 12;gap:4px;padding:24px 28px}
+.lib-item.story .row{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.lib-item.story h3{font-size:1.2rem}
+.lib-item.story .meta{font-size:.78rem;color:var(--muted);font-weight:500}
+.lib-item.story .body{display:grid;grid-template-rows:0fr;transition:grid-template-rows .45s ease}
+.lib-item.story .body>div{overflow:hidden}
+.lib-item.story.open .body{grid-template-rows:1fr}
+.lib-item.story .body p{max-width:62ch;margin:14px 0 0;color:var(--ink);font-weight:300;line-height:1.95;font-size:.98rem}
+.lib-item.story .body p:first-child::first-letter{font-size:1.9em;font-weight:600;color:var(--berry);margin-right:2px}
+
+/* ---- coquette lace cabinet (คลังของฉัน) ---- */
+.lace-cabinet{position:relative;margin-top:34px;padding:56px 40px 52px;background:var(--pearl);border-radius:36px;box-shadow:0 30px 50px -34px var(--shadow)}
+.lace-cabinet::before,.lace-cabinet::after{content:"";position:absolute;left:0;right:0;height:12px;pointer-events:none}
+.lace-cabinet::before{top:0;background:radial-gradient(circle at 50% 0,var(--bg) 8px,transparent 8.5px) 0 0/20px 12px repeat-x}
+.lace-cabinet::after{bottom:0;background:radial-gradient(circle at 50% 100%,var(--bg) 8px,transparent 8.5px) 0 0/20px 12px repeat-x}
+.lace-stitch{position:absolute;inset:16px;border:1.5px dashed color-mix(in srgb,var(--berry) 45%,transparent);border-radius:26px;pointer-events:none}
+.lace-bow{position:absolute;top:-26px;left:50%;transform:translateX(-50%);width:76px;height:52px;color:var(--berry);filter:drop-shadow(0 8px 8px color-mix(in srgb,var(--berry) 30%,transparent));z-index:2}
+.lace-bow svg{width:100%;height:100%;display:block;overflow:visible}
+.lace-head{text-align:center;margin-bottom:14px;position:relative}
+.lace-head small{display:block;font-size:.78rem;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--berry)}
+.lace-head p{margin:6px 0 0;color:var(--muted);font-weight:300;font-size:.95rem}
+.lace-list{list-style:none;margin:0;padding:0;position:relative}
+.lace-list li+li{border-top:1.5px dotted var(--line)}
+.lace-list a{display:grid;grid-template-columns:auto auto 1fr auto;align-items:center;gap:16px;padding:16px 14px;border-radius:22px;text-decoration:none;color:var(--ink);transition:background .3s,transform .35s cubic-bezier(.3,1.6,.5,1)}
+.lace-list a:hover{background:var(--bg);transform:translateX(5px)}
+.lace-list .n{font-size:.72rem;font-weight:600;color:var(--berry);letter-spacing:.08em;opacity:.8}
+.lace-list .ic{width:46px;height:46px;border-radius:50%;background:var(--matcha);display:grid;place-items:center;font-size:1.3rem;box-shadow:inset 0 0 0 3px var(--pearl),0 0 0 1.5px color-mix(in srgb,var(--berry) 40%,transparent);transition:transform .35s cubic-bezier(.3,1.6,.5,1)}
+.lace-list a:hover .ic{transform:rotate(-10deg) scale(1.08)}
+.lace-list .tx b{display:block;font-weight:600;font-size:1.05rem;line-height:1.4}
+.lace-list .tx i{display:block;font-style:normal;font-weight:300;font-size:.86rem;color:var(--muted);line-height:1.5}
+.lace-list .ar{font-size:1.1rem;color:var(--berry);transition:transform .3s}
+.lace-list a:hover .ar{transform:translateX(4px)}
+.lace-foot{text-align:center;margin-top:18px;color:var(--berry);letter-spacing:.7em;font-size:.8rem;opacity:.7;position:relative}
+@media(max-width:560px){
+  .lace-cabinet{padding:52px 18px 46px}
+  .lace-list a{grid-template-columns:auto 1fr auto;gap:12px;padding:14px 8px}
+  .lace-list .n{display:none}
+  .lace-list .ic{width:42px;height:42px}
+}
 </style>
 </head>
 <body>
@@ -361,6 +433,7 @@ html.in-lock,html.in-lock body{overflow:hidden}
       <li><a href="#projects"><span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></span>มุมละมุน</a></li>
       <li><a href="#skills"><span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></span>ความสุขเล็ก ๆ</a></li>
       <li><a href="#live-ide"><span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><path d="M8 8l-4 4 4 4M16 8l4 4-4 4M13.5 5l-3 14"/></svg></span>ทดลองรันโค้ด</a></li>
+      <li><a href="#library"><span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><path d="M4 4h5v16H4zM9 4h5v16H9zM15 6l4.5-1.2 3 14-4.500 1.200z"/></svg></span>คลังของฉัน</a></li>
       <li><a href="#contact"><span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></span>ติดต่อ</a></li>
     </ul>
   </div></nav>
@@ -522,6 +595,16 @@ html.in-lock,html.in-lock body{overflow:hidden}
       </div>
     </div>
 
+
+    <div id="library" class="section-title">คลังของฉัน <span>Les Bibliothèques</span></div>
+    <div class="lace-cabinet" role="navigation" aria-label="คลังของฉัน">
+      <div class="lace-stitch" aria-hidden="true"></div>
+      <div class="lace-bow" aria-hidden="true"><svg viewBox="0 0 76 52" fill="none"><path fill="currentColor" d="M38 26C30 8 8 4 5 14c-3 10 14 18 33 12zM38 26c8-18 30-22 33-12 3 10-14 18-33 12z"/><path d="M38 26C28 16 16 14 12 17M38 26c10-10 22-12 26-9" stroke="#fff" stroke-opacity=".45" stroke-width="1.6" stroke-linecap="round"/><path fill="currentColor" d="M36 30L24 50l8-3 4 5zM40 30l12 20-8-3-4 5z"/><circle cx="38" cy="26" r="6" fill="var(--pearl)" stroke="currentColor" stroke-width="2.4"/></svg></div>
+      <div class="lace-head"><small>✦ Les Bibliothèques ✦</small><p>เปิดลิ้นชักเลือกอ่านได้เลยน้า</p></div>
+      <ul class="lace-list"><li><a href="#/characters"><span class="n">01</span><span class="ic">🎀</span><span class="tx"><b>คลังตัวละคร</b><i>รวมตัวละครทั้งหมดที่เคยสร้างไว้</i></span><span class="ar">→</span></a></li><li><a href="#/books"><span class="n">02</span><span class="ic">📖</span><span class="tx"><b>คลังรีวิวหนังสือ</b><i>บันทึกความรู้สึกหลังอ่านจบแต่ละเล่ม</i></span><span class="ar">→</span></a></li><li><a href="#/music"><span class="n">03</span><span class="ic">🎧</span><span class="tx"><b>คลังแนะนำเพลง</b><i>เพลงที่อยากฟังคู่กับน้ำชายามบ่าย</i></span><span class="ar">→</span></a></li><li><a href="#/code"><span class="n">04</span><span class="ic">💻</span><span class="tx"><b>คลังโค้ดที่เคยแจก</b><i>โค้ดสวย ๆ ที่ก๊อปไปใช้ได้เลย</i></span><span class="ar">→</span></a></li><li><a href="#/stories"><span class="n">05</span><span class="ic">✒️</span><span class="tx"><b>คลังเรื่องสั้น</b><i>เรื่องสั้นที่แต่งไว้ อ่านได้ในหน้าเดียว</i></span><span class="ar">→</span></a></li></ul>
+      <div class="lace-foot" aria-hidden="true">♡ ♡ ♡</div>
+    </div>
+
     <div id="contact" class="section-title">ช่องทางติดต่อ <span>Contact</span></div>
     <div class="bento-grid">
       <div class="card contact-card">
@@ -540,6 +623,15 @@ html.in-lock,html.in-lock body{overflow:hidden}
       </div>
     </div>
   </main>
+
+<div id="libView" aria-live="polite">
+  <a class="lib-back" href="#library">← กลับหน้าแรก</a>
+  <div class="section-title" id="libTitle"></div>
+  <p class="lib-intro" id="libIntro"></p>
+  <div class="lib-tabs" id="libTabs"></div>
+  <div class="bento-grid" id="libGrid"></div>
+</div>
+
 
   <footer>the porcelain teahouse · ชงชาให้อุ่น แล้วค่อยแต่งโค้ดต่อ</footer>
 </div>
@@ -754,6 +846,55 @@ html.in-lock,html.in-lock body{overflow:hidden}
     }
   };
   ui();
+})();
+</script>
+
+<script>
+(function(){
+  /* >>> แก้ข้อมูลในคลังได้ที่ LIBS ด้านล่างนี้ <<< */
+  var META={"characters": {"e": "🎀", "t": "คลังตัวละคร", "s": "Character Archive", "d": "รวมตัวละครทั้งหมดที่เคยสร้างไว้"}, "books": {"e": "📖", "t": "คลังรีวิวหนังสือ", "s": "Book Reviews", "d": "บันทึกความรู้สึกหลังอ่านจบแต่ละเล่ม"}, "music": {"e": "🎧", "t": "คลังแนะนำเพลง", "s": "Playlist Picks", "d": "เพลงที่อยากฟังคู่กับน้ำชายามบ่าย"}, "code": {"e": "💻", "t": "คลังโค้ดที่เคยแจก", "s": "Shared Snippets", "d": "โค้ดสวย ๆ ที่เคยแจกไว้ ก๊อปไปใช้ได้เลย"}, "stories": {"e": "✒️", "t": "คลังเรื่องสั้น", "s": "Short Stories", "d": "เรื่องสั้นที่เคยแต่งไว้ กดชื่อเรื่องเพื่อเปิดอ่านได้เลย"}};
+  var LIBS={"characters": [{"t": "ชื่อตัวละคร 1", "k": "บทบาท / นิยายเรื่อง…", "d": "คำอธิบายสั้น ๆ นิสัย ลักษณะเด่น และเรื่องราวของตัวละครนี้"}, {"t": "ชื่อตัวละคร 2", "k": "บทบาท / นิยายเรื่อง…", "d": "คำอธิบายสั้น ๆ นิสัย ลักษณะเด่น และเรื่องราวของตัวละครนี้"}, {"t": "ชื่อตัวละคร 3", "k": "บทบาท / นิยายเรื่อง…", "d": "คำอธิบายสั้น ๆ นิสัย ลักษณะเด่น และเรื่องราวของตัวละครนี้"}, {"t": "ชื่อตัวละคร 4", "k": "บทบาท / นิยายเรื่อง…", "d": "คำอธิบายสั้น ๆ นิสัย ลักษณะเด่น และเรื่องราวของตัวละครนี้"}], "books": [{"t": "ชื่อหนังสือ 1", "k": "ผู้เขียน · แนว", "s": 5, "d": "รีวิวสั้น ๆ ว่าชอบตรงไหน อ่านแล้วรู้สึกอย่างไร"}, {"t": "ชื่อหนังสือ 2", "k": "ผู้เขียน · แนว", "s": 4, "d": "รีวิวสั้น ๆ ว่าชอบตรงไหน อ่านแล้วรู้สึกอย่างไร"}, {"t": "ชื่อหนังสือ 3", "k": "ผู้เขียน · แนว", "s": 5, "d": "รีวิวสั้น ๆ ว่าชอบตรงไหน อ่านแล้วรู้สึกอย่างไร"}, {"t": "ชื่อหนังสือ 4", "k": "ผู้เขียน · แนว", "s": 3, "d": "รีวิวสั้น ๆ ว่าชอบตรงไหน อ่านแล้วรู้สึกอย่างไร"}], "music": [{"t": "ชื่อเพลง 1", "k": "ศิลปิน", "d": "เหมาะกับช่วงเวลาไหน และทำไมถึงอยากแนะนำ"}, {"t": "ชื่อเพลง 2", "k": "ศิลปิน", "d": "เหมาะกับช่วงเวลาไหน และทำไมถึงอยากแนะนำ"}, {"t": "ชื่อเพลง 3", "k": "ศิลปิน", "d": "เหมาะกับช่วงเวลาไหน และทำไมถึงอยากแนะนำ"}, {"t": "ชื่อเพลง 4", "k": "ศิลปิน", "d": "เหมาะกับช่วงเวลาไหน และทำไมถึงอยากแนะนำ"}], "code": [{"t": "ปุ่มโปร่งแสงละมุน", "k": "CSS", "d": "ปุ่มมนสีพาสเทล วางลงโปรเจกต์ได้เลย", "c": ".btn{padding:10px 24px;border-radius:999px;\\n  background:#d7708f;color:#fff;border:0;\\n  box-shadow:0 10px 20px -10px #d7708f}"}, {"t": "ดาวกะพริบ", "k": "CSS", "d": "แอนิเมชันกะพริบเบา ๆ", "c": "@keyframes tw{50%{transform:scale(1.2)}}\\n.star{animation:tw 1.6s ease-in-out infinite}"}, {"t": "ตัวอย่างโค้ด 3", "k": "JS", "d": "ใส่คำอธิบายสั้น ๆ ที่นี่", "c": "// วางโค้ดที่เคยแจกตรงนี้"}, {"t": "ตัวอย่างโค้ด 4", "k": "HTML", "d": "ใส่คำอธิบายสั้น ๆ ที่นี่", "c": "<!-- วางโค้ดที่เคยแจกตรงนี้ -->"}], "stories": [{"t": "ชื่อเรื่องสั้น 1", "k": "แนวโรแมนติก · อ่านราว 5 นาที", "d": "เรื่องย่อหนึ่งสองบรรทัด ให้คนอ่านรู้ว่าเรื่องนี้เกี่ยวกับอะไร", "b": "ย่อหน้าแรกของเรื่อง วางเนื้อหาเรื่องสั้นของคุณตรงนี้ได้เลย\n\nย่อหน้าที่สอง เว้นบรรทัดว่างหนึ่งบรรทัดเพื่อขึ้นย่อหน้าใหม่"}, {"t": "ชื่อเรื่องสั้น 2", "k": "แนวแฟนตาซี · อ่านราว 8 นาที", "d": "เรื่องย่อหนึ่งสองบรรทัด ให้คนอ่านรู้ว่าเรื่องนี้เกี่ยวกับอะไร", "b": "ย่อหน้าแรกของเรื่อง วางเนื้อหาเรื่องสั้นของคุณตรงนี้ได้เลย\n\nย่อหน้าที่สอง เว้นบรรทัดว่างหนึ่งบรรทัดเพื่อขึ้นย่อหน้าใหม่"}, {"t": "ชื่อเรื่องสั้น 3", "k": "แนวอบอุ่นหัวใจ · อ่านราว 3 นาที", "d": "เรื่องย่อหนึ่งสองบรรทัด ให้คนอ่านรู้ว่าเรื่องนี้เกี่ยวกับอะไร", "b": "ย่อหน้าแรกของเรื่อง วางเนื้อหาเรื่องสั้นของคุณตรงนี้ได้เลย\n\nย่อหน้าที่สอง เว้นบรรทัดว่างหนึ่งบรรทัดเพื่อขึ้นย่อหน้าใหม่"}]};
+  var view=document.getElementById('libView'),grid=document.getElementById('libGrid'),
+      title=document.getElementById('libTitle'),intro=document.getElementById('libIntro'),tabs=document.getElementById('libTabs');
+  function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]});}
+  function render(key){
+    var m=META[key],items=LIBS[key];
+    title.innerHTML=m.e+' '+esc(m.t)+' <span>'+esc(m.s)+'</span>';
+    intro.textContent=m.d;
+    tabs.innerHTML=Object.keys(META).map(function(k){return '<a href="#/'+k+'"'+(k===key?' class="on"':'')+'>'+META[k].e+' '+esc(META[k].t)+'</a>';}).join('');
+    grid.innerHTML=items.map(function(it,i){
+      if(it.b){
+        return '<div class="card lib-item story"><div class="row"><h3>'+esc(it.t)+'</h3><span class="meta">'+esc(it.k||'')+'</span></div><p>'+esc(it.d||'')+'</p>'
+          +'<div class="body"><div>'+it.b.split(/\n\s*\n/).map(function(p){return '<p>'+esc(p).replace(/\n/g,'<br>')+'</p>';}).join('')+'</div></div>'
+          +'<button type="button" data-s="1" aria-expanded="false">อ่านเรื่องนี้</button></div>';
+      }
+      var h='<div class="card lib-item"><span class="k">'+esc(it.k||'')+'</span><h3>'+esc(it.t)+'</h3>';
+      if(it.s)h+='<span class="stars" aria-label="'+it.s+' จาก 5 ดาว">'+'★'.repeat(it.s)+'☆'.repeat(5-it.s)+'</span>';
+      h+='<p>'+esc(it.d||'')+'</p>';
+      if(it.c)h+='<pre>'+esc(it.c)+'</pre><button type="button" data-i="'+i+'">คัดลอกโค้ด</button>';
+      return h+'</div>';
+    }).join('');
+    grid.onclick=function(e){
+      var s=e.target.closest('button[data-s]');
+      if(s){var card=s.closest('.story'),o=card.classList.toggle('open');s.textContent=o?'ซ่อนเรื่อง':'อ่านเรื่องนี้';s.setAttribute('aria-expanded',o);return;}
+      var b=e.target.closest('button[data-i]');if(!b)return;
+      var txt=items[b.dataset.i].c;
+      function ok(){b.textContent='คัดลอกแล้ว ✓';setTimeout(function(){b.textContent='คัดลอกโค้ด';},1400);}
+      if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(txt).then(ok,function(){});}
+    };
+  }
+  function route(){
+    var m=location.hash.match(/^#\/(\w+)$/);
+    if(m&&META[m[1]]){
+      render(m[1]);document.body.classList.add('in-lib');window.scrollTo(0,0);
+      document.title=META[m[1]].t+' · the porcelain teahouse';
+    }else{
+      var was=document.body.classList.contains('in-lib');
+      document.body.classList.remove('in-lib');document.title='the porcelain teahouse';
+      if(was&&location.hash){var el=document.querySelector(location.hash);if(el)el.scrollIntoView();}
+    }
+  }
+  window.addEventListener('hashchange',route);route();
 })();
 </script>
 </body>
