@@ -627,7 +627,7 @@ html.in-lock,html.in-lock body{overflow:hidden}
   function enter(){ if(left)return; left=true; intro.classList.add('out'); if(window.teaMusic) window.teaMusic.start(); root.classList.remove('in-lock'); window.scrollTo(0,0); }
   function next(){
     if(i<stars.length){ field.classList.add('started'); stars[i].classList.add('on'); i++; count.textContent=i; setTimeout(next,750); }
-    else{ search.classList.add('done'); go.textContent='เข้าสู่ร้าน ✦'; status.textContent='ชงเสร็จแล้ว! กำลังพาเข้าร้านชา 🍵'; setTimeout(enter,1100); }
+    else{ search.classList.add('done'); go.textContent='เข้าสู่ร้าน ✦'; status.textContent='ชงเสร็จแล้ว ! กำลังเข้าสู่ร้านชา 🍵'; setTimeout(enter,1100); }
   }
   search.addEventListener('click',enter);
   document.getElementById('inSkip').addEventListener('click',enter);
