@@ -1,12 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600&display=swap');
 
-/* =========================================================
-   Porcelain Tea · เรือนชาโค้ดชมพู
-   ทุกคลาสขึ้นต้นด้วย pt- และอยู่ใต้ .pt-canvas เพื่อไม่ชนกับ CSS อื่น
-   ========================================================= */
-
-/* ---------- ตัวแปร: สี + รูปภาพ (แก้ตรงนี้ที่เดียว) ---------- */
-.pt-canvas {
+:root {
   --pt-bg: #e8ccd7;
   --pt-pearl: #fff8fb;
   --pt-ink: #2b1827;
@@ -20,12 +14,10 @@
   --pt-line: rgba(43, 24, 39, .14);
   --pt-shadow: rgba(43, 24, 39, .45);
 
-  /* เปลี่ยนเป็นลิงก์รูปของคุณ */
   --pt-img-cup: url('tea-cup.png');
   --pt-img-shop: url('tea-shop.png');
 }
 
-/* โหมดมืด (ตามเครื่องของผู้ชม) */
 @media (prefers-color-scheme: dark) {
   .pt-canvas {
     --pt-bg: #1a0f17;
@@ -38,14 +30,12 @@
   }
 }
 
-/* ---------- รีเซ็ต ---------- */
 :where(.pt-canvas, .pt-canvas *) {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* ---------- ผืนผ้าใบหลัก ---------- */
 .pt-canvas {
   position: relative;
   max-width: 750px;
@@ -60,7 +50,6 @@
   line-height: 1.75;
 }
 
-/* ---------- ส่วนหัว ---------- */
 .pt-header {
   display: flex;
   align-items: center;
@@ -135,7 +124,6 @@
   box-shadow: inset 0 2px 0 rgba(255, 255, 255, .18), 0 12px 24px -12px var(--pt-shadow);
 }
 
-/* ไอคอนถ้วยเล็กในโลโก้ (สร้างจาก div) */
 .pt-cup-icon,
 .pt-burger-icon {
   position: relative;
@@ -180,7 +168,6 @@
 .pt-ci-steam-1 { left: 8px; }
 .pt-ci-steam-2 { left: 12px; top: 2px; }
 
-/* ขีดสามเส้นของปุ่มเมนู */
 .pt-burger-line {
   left: 5px;
   height: 2px;
@@ -192,7 +179,6 @@
 .pt-line-2 { top: 11px; width: 9px; }
 .pt-line-3 { top: 16px; width: 14px; }
 
-/* ---------- ส่วนต้อนรับ (ข้อความ + รูปถ้วยชา) ---------- */
 .pt-grid {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
@@ -245,7 +231,6 @@
   opacity: .4;
 }
 
-/* รูปถ้วยชา */
 .pt-hero-img {
   position: relative;
   width: 86%;
@@ -253,7 +238,6 @@
   background: var(--pt-img-cup) center / contain no-repeat;
 }
 
-/* ---------- แถบตัวอักษรเลื่อน ---------- */
 .pt-ticker {
   overflow: hidden;
   margin: 34px -30px 38px;
@@ -287,7 +271,6 @@
   color: var(--pt-matcha);
 }
 
-/* ---------- กล่องโค้ด ---------- */
 .pt-editor {
   position: relative;
   overflow: hidden;
@@ -344,7 +327,6 @@
   color: var(--pt-night-muted);
 }
 
-/* พื้นที่แสดงตัวโค้ด */
 .pt-code {
   min-height: 300px;
   padding: 18px 28px 28px;
@@ -353,7 +335,6 @@
   font: 400 .95rem/1.85 ui-monospace, Menlo, Consolas, monospace;
 }
 
-/* ---------- ช่องรูปตัวอย่าง ---------- */
 .pt-shot {
   grid-column: span 5;
   align-self: start;
@@ -373,7 +354,6 @@
   background: var(--pt-bg);
 }
 
-/* กรอบข้อความ จะเห็นเมื่อรูปไม่ขึ้น */
 .pt-slot-ph {
   position: absolute;
   inset: 12px;
@@ -386,7 +366,6 @@
   color: var(--pt-muted);
 }
 
-/* รูปตัวอย่าง ครอบเต็มช่องอัตโนมัติ */
 .pt-slot-img {
   position: absolute;
   inset: 0;
@@ -411,7 +390,6 @@
   background: var(--pt-berry);
 }
 
-/* ---------- กล่องคำอธิบาย ---------- */
 .pt-about {
   grid-column: span 7;
   padding: 22px 24px 16px;
@@ -474,7 +452,6 @@
   transform: rotate(45deg);
 }
 
-/* หัวข้อพับเปิด-ปิด */
 .pt-canvas details {
   border-top: 1px solid var(--pt-line);
 }
@@ -521,7 +498,6 @@
   color: var(--pt-muted);
 }
 
-/* ---------- ท้ายหน้า ---------- */
 .pt-footer {
   padding: 44px 0 34px;
   text-align: center;
@@ -530,7 +506,6 @@
   color: var(--pt-muted);
 }
 
-/* ---------- แอนิเมชัน (ปิดให้อัตโนมัติถ้าผู้ชมตั้งลดการเคลื่อนไหว) ---------- */
 @media (prefers-reduced-motion: no-preference) {
   .pt-float { animation: pt-float 6s ease-in-out infinite; }
   .pt-ticker-row { animation: pt-slide 26s linear infinite; }
@@ -545,7 +520,6 @@
   }
 }
 
-/* ---------- มือถือ ---------- */
 @media (max-width: 640px) {
   .pt-hero-text,
   .pt-hero-art,
